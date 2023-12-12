@@ -1,0 +1,97 @@
+/* importing GOOgle Font from google */
+
+@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+
+ /* GOBAL CSS  */
+ :root
+ {
+     --main-color:#a800a8;
+     --shadow-black-100:0 5px 15px rgba(0,0,0,0.1);
+     --shadow-black-300:0 5px 15px rgba(0,0,0,0.3);
+     --black-900:#000;
+     --black-400:#555555;
+     --black-100:#f7f7f7;
+     --white:#fff;
+     --black-alpha-100:rgba(0,0,0,0.05);
+ }
+ body
+ {
+     font-family: "Silkscreen";
+     font-size: 25px;
+     font-weight: normal;
+     overflow-x: hidden;
+     background-color: var(--white);
+ }
+ *
+ {
+ /* { This style is used to reset the style of the page */
+     margin: 0;
+     padding: 0;
+     outline: none !important;
+ }
+ img
+ {
+     max-width: 100%;
+     vertical-align: middle;
+ }
+ ul
+ {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }
+ a,a:hover
+ {
+     text-decoration: none;
+ }
+ /* NAVBAR DECORATION */
+ .navbar{
+    background-color: var(--white);
+    padding: 30px 0;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.08);
+ }
+.navbar > .container{
+    /* This is used to target child of the navabar */
+    padding: 0 15px;
+
+}
+.navbar .navbar-brand{
+    /* .navbar .navbar-brand is selecting an element with the class "navbar-brand" that is a descendant of an element with the class "navbar". This assumes a structure where the brand element is nested inside another element with the class "navbar". */
+    font-size: 30px;
+    color: var(--main-color);
+    font-weight: 500;
+    text-transform: capitalize;       /* NOTE:The text-transform: capitalize; CSS property is used to capitalize the first letter of each word in a text string. This means that the first letter of each word will be converted to uppercase, while the rest of the letters in each word will be in lowercase. */
+}
+.navbar .nav-item{
+    margin-left: 35px;
+}
+.navbar .nav-item .nav-link{
+    color: var(--black-400);
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 5px 0;
+    position: relative;
+}
+.navbar .nav-item .nav-link::before{
+    position: absolute;
+    content: '';
+    background-color: var(--main-color);
+    width: 3px;
+    height: 0px;
+    left: 50%;
+    top: -100%;
+    transform: translate(-50%);            /*  NOTE:transform: This is a CSS property used for transforming elements. It can include various transformation functions like translate(), rotate(), scale(), etc.
+
+    translate(): This function is used to move or translate an element along the X and Y axes. It can take one or two values. When one value is provided, it represents the horizontal translation (X-axis), and when two values are provided, the first represents the horizontal translation, and the second represents the vertical translation (Y-axis).
+    
+    -50%: In this case, a single value is provided for the translate() function, and it is -50%. This means the element is being translated horizontally along the X-axis by 50% of its own width in the negative direction. */
+    transition: all 0.3s ease-out 0s;
+
+}
+.navbar .nav-item .nav-link.active, .navbar .nav-item .nav-link:hover{
+    color: var(--main-color);
+}
+.navbar .nav-item .nav-link.active::before, .navbar .nav-item .nav-link:hover::before{
+    height: 45px;
+}
